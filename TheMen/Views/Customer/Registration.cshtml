@@ -1,0 +1,79 @@
+﻿
+@{
+    ViewBag.Title = "Registration";
+    Layout = "~/Views/Shared/_LayoutShare.cshtml";
+}
+<head>
+    <meta charset="utf-8">
+    <title>Đăng kí</title>
+    <link rel="stylesheet" type="text/css" href="~/css/style-registration.css" />
+</head>
+
+<body>
+    <div class="container-main">
+        <div class="box-main">
+            <div class="main">
+                <div class="clear">
+                    <h2 class="line">ĐĂNG KÍ THÀNH VIÊN</h2>
+                    <div class="row">
+                        <table class="table">
+                            @using (Html.BeginForm())
+                            {
+                                @Html.ValidationSummary(true)
+                                <tr style="height:30px">
+                                    <td>Họ tên khách hàng:</td>
+                                    <td>
+                                        @Html.TextBox("Name")
+                                        @ViewData["Loi1"]
+                                    </td>
+                                </tr>
+
+                                <tr style="height:30px">
+                                    <td>Tên đăng nhập:</td>
+                                    <td>
+                                        @Html.TextBox("Account")
+                                        @ViewData["Loi2"]
+                                    </td>
+                                </tr>
+
+                                <tr style="height:30px">
+                                    <td>Mật khẩu:</td>
+                                    <td>
+                                        @Html.Password("Pass")
+                                        @ViewData["Loi3"]
+                                    </td>
+                                </tr>
+                                <tr style="height:30px">
+                                    <td>Nhập lại mật khẩu:</td>
+                                    <td>
+                                        @Html.Password("NhapLaiPass")
+                                        @ViewData["Loi4"]
+                                    </td>
+                                </tr>
+                                <tr style="height:30px">
+                                    <td>Số điện thoại:</td>
+                                    <td>
+                                        @Html.TextBox("Phone")
+                                        @ViewData["Loi5"]
+                                    </td>
+                                </tr>
+                                <tr style="height:30px">
+                                    <td>Ngày sinh:</td>
+                                    <td>
+                                        <input type="date" name="Ngaysinh" />
+                                    </td>
+                                </tr>
+                                <tr style="height:30px">
+                                    <td></td>
+                                    <td>
+                                        <input type="submit" value="Đăng kí" />
+                                    </td>
+                                </tr>
+                            }
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

@@ -1,0 +1,132 @@
+﻿@model TheMen.Models.HomeModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutShare.cshtml";
+}
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Thời trang siêu đẹp siêu ngầu</title>
+    <link rel="stylesheet" type="text/css" href="~/css/style-trangchu.css" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="clear">
+            <img id="banner" src="~/img/banner.png" height="650" />
+            <div class="leftcolumn">
+                <div class="small-container">
+                    <h2 class="line">Sản phẩm mới về</h2>
+                    <div class="row">
+                        @foreach (var item in Model.ListProduct.Take(4))//lay item tu` HomeModel
+                        {
+                            <!--col 1-->
+                            <div class="col-4">
+                                <div class="box-wrapper">
+                                    <a class="box-img" href="@Url.Action("Detail", "Home", new {id = item.ProductId})"><img src="~/img/@item.Image"></a>
+                                    <div class="box-text">
+                                        <div class="title-wrapper">
+                                            <div class="title">@item.ProductName</div>
+                                        </div>
+                                        <div class="price-wrapper">
+                                            <div class="price">@item.Price<span class="đ">đ</span></div>
+                                        </div>
+                                        <div class="add-to-cart-btn">
+                                            <div class="button"> <a id="addtocart" href="#" tabindex="-1" aria-disabled="true" class="btn"> <span class="btn-label">Mua ngay</span> </a> </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--end col 1-->
+                        }
+                    </div>
+                </div>
+
+                <div class="small-container">
+                    <h2 class="line">Sản phẩm nổi bật</h2>
+                    <div class="row">
+                        @foreach (var item in Model.ListProduct.Take(4))
+                        {
+                            <!--col 1-->
+                            <div class="col-4">
+                                <div class="box-wrapper">
+                                    <div class="box-img" href="#"><img src="~/img/@item.Image"></div>
+
+                                    <div class="box-text">
+                                        <div class="title-wrapper">
+                                            <div class="title">@item.ProductName</div>
+                                        </div>
+                                        <div class="price-wrapper">
+                                            <div class="price">@item.Price<span class="đ">đ</span></div>
+                                        </div>
+                                        <div class="add-to-card-btn">
+                                            <div class="button"> <a href="~/GioHang" tabindex="-1" aria-disabled="true" class="btn"> <span class="btn-label">Mua ngay</span> </a>  </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--end col 1-->
+                        }
+                    </div>
+                </div>
+            </div>
+            <!--end col 4-->
+            <!--rightcolum-->
+            <div class="rightcolumn">
+                <div class="small-container">
+                    <h3>Danh mục sản phẩm</h3>
+                    <ul>
+                        @foreach (var item in Model.ListCategory)//lay item tu` HomeModel
+                        {
+                        <li>
+                             @Html.ActionLink(item.CategoryName, "ProductCategory", "Category", new {id = item.CategoryId}, null)
+                        </li>
+                        }
+                    </ul>
+
+                    <div class="small-container">
+                        <h3>Sản phẩm nổi bật</h3>
+                        <div class="row">
+
+                        </div>
+                        <div class="footer-col-2">
+
+                        </div>
+                    </div>
+                    <h3>Tin tức nổi bật</h3>
+                    <div class="row">
+                        <div class="col-1">
+                            <div class="box-wrapper">
+                                <div class="box-img"><img src="./img/giay1.jpg"></div>
+                                <div class="box-text">
+                                    <div class="text-wrapper">
+                                        <div class="text">
+                                            <p>Giày nike có mấy người nhà giàu nó mang chứ ai mà có tiền mang ba cái giày này, mua về đi tốn tiền đó</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--end rightcolum-->
+        </div>
+    </div>
+</body>
+</html>
+
+<script type="text/javascript">
+    function buynow() {
+        question = confirm("Bạn muốn mua sản phẩm này ?");
+        if (question != false) {
+            alert('Cảm ơn bạn đã góp gạo')
+        }
+    }
+</script>
+
+
+
+

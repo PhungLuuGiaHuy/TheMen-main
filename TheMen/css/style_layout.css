@@ -1,0 +1,177 @@
+@charset "utf-8";
+/* CSS Document */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Muli', sans-serif;
+	background-image: url(/img/bgbody.png);
+}
+/* Header/Blog Title */
+.header {
+	max-width: 1800px;
+	margin: auto;
+	padding-left: 10px;
+	padding-right: 25px;
+	background-color: rgb(240, 240, 240);
+}
+
+.header-main {
+	height: 115px;
+	position: relative;
+	display: block;
+}
+
+.container-logo-search-cart {
+	height: 100%;
+	width: 100%;
+	max-width: 1230px;
+	display: flex;
+	align-items: center;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.logo {
+	width: 227px;
+	margin-left: 0;
+	margin-right: 30px;
+	line-height: 1;
+	margin: 0;
+	max-height: 100%;
+	display: block;
+}
+
+.cart {
+	margin-left: 0;
+	margin-right: 30px;
+	line-height: 1;
+	margin: 0;
+	max-height: 100%;
+	display: block;
+}
+
+
+.menu-top {
+	background-color: dimgray;
+	display: flex;
+	align-items: center;
+	padding: 0;
+}
+
+	.menu-top nav {
+		flex: 1;
+		text-align: center;
+	}
+
+		.menu-top nav ul {
+			display: inline-block;
+			list-style-type: none;
+		}
+
+			.menu-top nav ul li {
+				display: inline-block;
+				margin-right: 0px;
+			}
+
+				.menu-top nav ul li a {
+					display: block;
+					text-decoration: none;
+					background-repeat: no-repeat;
+					height: 50px;
+					padding: 10px;
+					padding-top: 18px;
+					color: black;
+				}
+
+				nav ul li a:hover {
+					color: #333;
+					background-color: darkgray;
+				}
+
+.row-layout{
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+.copyright {
+	font-size: 15px;
+	text-align: center;
+}
+
+.footer {
+	background: dimgrey;
+	font-size: 14px;
+	padding: 60px 0 20px;
+}
+
+	.footer p {
+		color: #333;
+	}
+
+	.footer h3 {
+		color: #fff;
+		margin-bottom: 20px;
+	}
+
+.footer-col-1,
+.footer-col-2,
+.footer-col-3,
+.footer-col-4 {
+	min-width: 250px;
+	margin-bottom: 20px;
+}
+
+.footer-col-1 {
+	flex-basis: 30%;
+}
+
+.footer-col-2 {
+	text-align: center;
+	flex: 1;
+}
+
+	.footer-col-2 img {
+		margin-bottom: 20px;
+		width: 100%;
+	}
+
+.footer-col-4 {
+	flex-basis: 12%;
+	text-align: center;
+}
+
+.footer-col-3 {
+	flex-basis: 12%;
+	text-align: center;
+}
+
+ul {
+	list-style-type: none;
+}
+
+.app-logo {
+	margin-top: 20px;
+}
+
+	.app-logo img {
+		width: 140px;
+	}
+
+.copyright {
+	text-align: center;
+}
+
+.footer hr {
+	border: none;
+	background: dimgray;
+	height: 1px;
+	margin: 20px 0;
+}

@@ -1,0 +1,116 @@
+﻿
+@{
+    ViewBag.Title = "CheckOut";
+    Layout = null;
+}
+
+<head>
+    <meta charset="utf-8">
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="./css/stylethongtinthanhtoan.css" />
+    <!-- Custom styles for this template -->
+    <link href="form-validation.css" rel="stylesheet">
+</head>
+
+
+<body>
+    <div class="bg-light">
+        <div class="container">
+            <div class="py-5 text-center">
+                <h2>THANH TOÁN</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-4 order-md-2 mb-4">
+                    <h4 class="d-flex justify-content-between align-items-center mb-3">
+                        <span class="text-muted">Giỏ hàng</span>
+                        <span class="badge badge-secondary badge-pill">3</span>
+                    </h4>
+                    <ul class="list-group mb-3">
+                        <li class="list-group-item d-flex justify-content-between lh-condensed">
+                            <div>
+                                <h6 class="my-0">Product name</h6>
+                                <small class="text-muted">Brief description</small>
+                            </div>
+                            <span class="text-muted">$12</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between lh-condensed">
+                            <div>
+                                <h6 class="my-0">Second product</h6>
+                                <small class="text-muted">Brief description</small>
+                            </div>
+                            <span class="text-muted">$8</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between lh-condensed">
+                            <div>
+                                <h6 class="my-0">Third item</h6>
+                                <small class="text-muted">Brief description</small>
+                            </div>
+                            <span class="text-muted">$5</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between">
+                            <span>Tổng cộng (VNĐ)</span>
+                            <strong>200000</strong>
+                        </li>
+                    </ul>
+
+                </div>
+                <div class="col-md-8 order-md-1">
+                    <h4 class="mb-3">Thông tin thanh toán</h4>
+                    <form class="needs-validation" novalidate>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="firstName">Họ và tên</label>
+                                <input type="text" class="form-control" id="Name" placeholder="Nguyễn Văn Tèo" value="" required>
+                                <div class="invalid-feedback">
+                                    Họ và tên không được để trống.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="tel">Số điện thoại</label>
+                            <input type="tel" class="form-control" id="phone" placeholder="012345678" required>
+                            <div class="invalid-feedback">
+                                Vui lòng nhập số điện thoại của bạn.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email">Email <span class="text-muted">(Không bắt buộc)</span></label>
+                            <input type="email" class="form-control" id="email" placeholder="Nhập email">
+                            <div class="invalid-feedback">
+                                Vui lòng nhập địa chỉ email hợp lệ để cập nhật thông tin vận chuyển.
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="address">Địa chỉ nhận hàng</label>
+                            <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
+                            <div class="invalid-feedback">
+                                Vui lòng nhập địa chỉ vận chuyển của bạn.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="note">Ghi chú <span class="text-muted">(Không bắt buộc)</span></label>
+                            <input type="text" class="form-control" id="note" placeholder="Hàng đẹp quá . . .">
+                        </div>
+
+                        <hr class="mb-4">
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="save-info">
+                            <label class="custom-control-label" for="save-info">Lưu thông tin này cho lần sau</label>
+                        </div>
+                        <hr class="mb-4">
+                        <button class="btn btn-primary btn-lg btn-block" type="submit">Tiếp tục thanh toán</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="khoangtrang"></div>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="https://getbootstrap.com/docs/4.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
+    <script src="https://getbootstrap.com/docs/4.3/examples/checkout/form-validation.js"></script>
+</body>
+

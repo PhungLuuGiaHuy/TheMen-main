@@ -1,0 +1,51 @@
+﻿
+@{
+    ViewBag.Title = "Cart";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Giỏ hàng</title>
+    <link rel="stylesheet" type="text/css" href="./css/style-gio-hang.css" />
+    <script src="https://kit.fontawesome.com/94d458011e.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="giohang">
+        <div class="tieude"> <p1>Sản phẩm</p1><p2>Giá</p2> <p3>Số lượng</p3> <p4>Thành tiền</p4></div>
+        <div class="itemgiohang">
+            <div class="imgitem">
+                <img src="./img/giay1.jpg">
+            </div>
+            <p class="nameitem">Giày 1</p>
+            <div class="price">500000đ</div>
+            <input type="number" class="soluong" value="1">
+            <p class="thanhtien">500000đ</p>
+            <div class="deleteitem"></div>
+            <i class="fas fa-trash"></i>
+        </div>
+        <div class="itemgiohang">
+            <div class="imgitem">
+                <img src="./img/giay1.jpg">
+            </div>
+            <p class="nameitem">Giày 1</p>
+            <div class="price">500000đ</div>
+            <input type="number" class="soluong" value="1">
+            <p class="thanhtien">500000đ</p>
+            <div class="deleteitem"></div>
+            <i class="fas fa-trash"></i>
+        </div>
+        <div class="tongtien">
+            <a>Tổng tiền: </a>
+        </div>
+        <div class="btn-thanhtoan">
+            <div class="button"> <b href="javascript:thanhtoan()" class="btn"> <span class="btn-label">Thanh toán</span> </b> </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+

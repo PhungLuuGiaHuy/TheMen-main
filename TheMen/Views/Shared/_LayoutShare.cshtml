@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["_LayoutShare"]</title>
+    <link rel="stylesheet" type="text/css" href="~/css/style_layout.css" />
+ 
+</head>
+
+<body>
+    <div class="header">
+        <!-- logo cart and search-->
+        <div class="header-main">
+            <div class="container-logo-search-cart">
+                <div class="logo">
+                    <a>
+                        <img src="~/img/logostore.png" width="215" height="90" alt="">
+                    </a>
+                </div>
+                <div class="search">
+
+                </div>
+                <div class="cart">
+                    <a  href="~/Cart" tabindex="-1" aria-disabled="true"><img src="~/img/cart.png" width="35" height="35"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--and logo cart and search-->
+    <!--menutop-->
+    <div class="menu-top">
+        <nav>
+            <ul>
+                <li>@Html.ActionLink("TRANG CHỦ", "Index", "Home")</li>
+                <li>@Html.ActionLink("GIỚI THIỆU", "GioiThieu", "Home")</li>
+                <li><a href="#">BẢO HÀNH</a></li>
+                <li><a href="#">TƯ VẤN</a></li>
+                <li><a href="#">LIÊN HỆ</a></li>
+                <li><a href="#">ĐĂNG NHẬP</a></li>
+                <li><a href="#">ĐĂNG KÝ</a></li>
+            </ul>
+        </nav>
+    </div>
+    <!--end menutop-->
+    <!--nội dung của từng trang-->
+    @RenderBody()
+    <!--end nội dung của từng trang-->
+    <!--footer-->
+    <div class="footer">
+        <div class="row-layout">
+            <div class="footer-col-2">
+                <h3>Download our app </h3>
+                <p> Download app for android and ios mobile phone.</p>
+                <div class="app-logo"> <img src="~/img/play-store.png"> <img src="~/img/app-store.png"> </div>
+            </div>
+            <div class="footer-col-3">
+                <h3> Userful links</h3>
+                <ul>
+                    <li> Coupons</li>
+                    <li> Blog Post</li>
+                    <li> Return Policy</li>
+                    <li> Become Affiliate</li>
+                </ul>
+            </div>
+            <div class="footer-col-3">
+                <h3> Follow us</h3>
+                <ul>
+                    <li> Facebook</li>
+                    <li> Twitter</li>
+                    <li> Instagram</li>
+                    <li> Youtube</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--end footer-->
+    <p class="copyright"> Design Minh Hoàng - Ông hoàng thời trang </p>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

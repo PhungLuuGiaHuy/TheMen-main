@@ -1,0 +1,83 @@
+﻿@model IEnumerable<TheMen.Models.Cart>
+@{
+    ViewData["Title"] = "Cart";
+    Layout = "~/Views/Shared/_LayoutShare.cshtml";
+}
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Giỏ hàng</title>
+    <link rel="stylesheet" type="text/css" href="~/css/style-cart.css" />
+    <script src="https://kit.fontawesome.com/94d458011e.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="giohang">
+        <div class="tieude"> <p1>Sản phẩm</p1><p2>Giá</p2> <p3>Số lượng</p3><p4>Thành tiền</p4></div>
+        @if (Model != null)
+        {
+            foreach (var item in Model)
+            {
+    <div class="itemgiohang" id="Product-@item.Product.ProductId">
+        <div class="imgitem">
+            <img src="./img/@item.Product.Image">
+        </div>
+        <p class="nameitem">@item.Product.ProductName</p>
+        <div class="price">@item.Product.Price</div>
+        <input type="number" class="soluong" value="@item.Soluong">
+        <p class="thanhtien">500000đ</p>
+        <input type="hidden" value="@item.Product.ProductId" id="ProductId" />
+        <a class="deleteitem"  id="removecart"><i class="fas fa-trash"></i></a>
+    </div>
+            }
+        }
+        else
+        {
+            <p style="text-align: center">CÓ MUA GÌ ĐÂU MÀ COI MÁ!</p>
+        }
+
+        <div class="tongtien">
+            <a>Tổng tiền: </a>
+        </div>
+        <div class="btn-thanhtoan">
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                <input type="hidden" name="cmd" value="_s-xclick">
+                <input type="hidden" name="hosted_button_id" value="A6AVZQ9ZRWVAG">
+                <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+
+<script type="text/javascript">
+    $(function () {
+        $("#removecart").click(function () {
+            var model = {};
+            //lấy id sản phẩm
+             model.ProductId =$("#ProductId").val();
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("Remove", "Cart")',
+                data:  JSON.stringify(model) ,
+                dataType: "json",
+                contentType: "application/json; charset=utf-8",
+                success: function () {
+                    alert("Xóa sản phẩm thành công rồi nho!")
+                    $('#CartCount').text(@Session["count"] - 1);
+                    $("#Product-" + model.ProductId).remove();
+                },
+                error: function () {
+                    alert("Lỗi trong khi xóa sản phẩm!");
+                }
+            });
+            return false;
+        });
+    });
+</script>
+
+
+
