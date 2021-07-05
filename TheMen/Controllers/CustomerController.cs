@@ -35,6 +35,7 @@ namespace TheMen.Controllers
         [HttpGet]
         public ActionResult Registration()
         {
+            TheMenDbContext context = new TheMenDbContext();
             return View();
         }
 
@@ -42,6 +43,7 @@ namespace TheMen.Controllers
         [HttpPost]
         public ActionResult Registration(FormCollection collection, Customer cus)
         {
+            TheMenDbContext context = new TheMenDbContext();
             //gán các giá trị người dùng nhập
             var name = collection["Name"];
             var account = collection["Account"];
@@ -84,10 +86,9 @@ namespace TheMen.Controllers
                 cus.Email = email;
                 cus.Phone = phone;
                 cus.Ngaysinh = DateTime.Parse(ngaysinh);
-
                 //context.Customer.InsertOnSubmit(cus);
                 context.Customer.Add(cus);
-                context.SaveChanges();
+                context.SaveChangesAsync();
 
                 return RedirectToAction("Login");
             }
